@@ -78,16 +78,68 @@ class KnowledgeGraph:
 kg = KnowledgeGraph()
 
 # Criando os times
-kg.add_entity("Cruzeiro", "Time", {"cidade": "Minas Gerais"})
-kg.add_entity("Atlético Mineiro", "Time", {"cidade": "Minas Gerais"})
+kg.add_entity("Flamengo", "Time", {"estado": "RJ"})
+kg.add_entity("Palmeiras", "Time", {"estado": "SP"})
+kg.add_entity("São Paulo", "Time", {"estado": "SP"})
+kg.add_entity("Corinthians", "Time", {"estado": "SP"})
+kg.add_entity("Cruzeiro", "Time", {"estado": "MG"})
+kg.add_entity("Atlético Mineiro", "Time", {"estado": "MG"})
 
 # Criando os jogadores
 kg.add_entity("Gabriel Barbosa", "Jogador", {"idade": 29, "posição": "Atacante"})
 kg.add_entity("Dudu", "Jogador", {"idade": 33, "posição": "Ponta"})
+kg.add_entity("Hulk", "Jogador", {"idade": 38, "posição": "Atacante"})
+kg.add_entity("Arrascaeta", "Jogador", {"idade": 30, "posição": "Meia"})
+kg.add_entity("Raphael Veiga", "Jogador", {"idade": 28, "posição": "Meia"})
+kg.add_entity("Calleri", "Jogador", {"idade": 30, "posição": "Atacante"})
+kg.add_entity("Yuri Alberto", "Jogador", {"idade": 23, "posição": "Atacante"})
+kg.add_entity("Paulinho", "Jogador", {"idade": 24, "posição": "Atacante"})
+kg.add_entity("Everton Ribeiro", "Jogador", {"idade": 35, "posição": "Meia"})
+kg.add_entity("Endrick", "Jogador", {"idade": 18, "posição": "Atacante"})
+kg.add_entity("Wesley", "Jogador", {"idade": 20, "posição": "Ponta"})
+kg.add_entity("Pedro", "Jogador", {"idade": 27, "posição": "Atacante"})
+kg.add_entity("Bruno Henrique", "Jogador", {"idade": 33, "posição": "Ponta"})
+kg.add_entity("Fábio", "Jogador", {"idade": 43, "posição": "Goleiro"})
+
+
+# Técnicos
+kg.add_entity("Tite", "Técnico", {"nacionalidade": "Brasil"})
+kg.add_entity("Abel Ferreira", "Técnico", {"nacionalidade": "Portugal"})
+kg.add_entity("Felipão", "Técnico", {"nacionalidade": "Brasil"})
+
+# Campeonato
+kg.add_entity("Brasileirão Série A", "Campeonato", {"nível": "1"})
 
 # Criando os relacionamentos
-kg.add_relation("Gabriel Barbosa", "joga_no", "Cruzeiro")
-kg.add_relation("Dudu", "joga_no", "Atlético Mineiro")
+kg.add_relation("Gabriel Barbosa", "joga_no", "Flamengo")
+kg.add_relation("Arrascaeta", "joga_no", "Flamengo")
+kg.add_relation("Pedro", "joga_no", "Flamengo")
+kg.add_relation("Bruno Henrique", "joga_no", "Flamengo")
 
+kg.add_relation("Raphael Veiga", "joga_no", "Palmeiras")
+kg.add_relation("Dudu", "joga_no", "Palmeiras")
+kg.add_relation("Endrick", "joga_no", "Palmeiras")
+
+kg.add_relation("Calleri", "joga_no", "São Paulo")
+kg.add_relation("Wesley", "joga_no", "São Paulo")
+
+kg.add_relation("Yuri Alberto", "joga_no", "Corinthians")
+
+kg.add_relation("Hulk", "joga_no", "Atlético Mineiro")
+kg.add_relation("Paulinho", "joga_no", "Atlético Mineiro")
+
+kg.add_relation("Fábio", "joga_no", "Cruzeiro")
+
+
+# Técnicos nos times
+kg.add_relation("Tite", "treina", "Flamengo")
+kg.add_relation("Abel Ferreira", "treina", "Palmeiras")
+kg.add_relation("Felipão", "treina", "Atlético Mineiro")
+
+# Times disputam campeonato
+kg.add_relation("Flamengo", "disputa", "Brasileirão Série A")
+kg.add_relation("Palmeiras", "disputa", "Brasileirão Série A")
+kg.add_relation("Atlético Mineiro", "disputa", "Brasileirão Série A")
+kg.add_relation("Cruzeiro", "disputa", "Brasileirão Série A")
 
 kg.show_graph()
