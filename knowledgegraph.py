@@ -143,3 +143,6 @@ kg.add_relation("Atlético Mineiro", "disputa", "Brasileirão Série A")
 kg.add_relation("Cruzeiro", "disputa", "Brasileirão Série A")
 
 kg.show_graph()
+
+
+
